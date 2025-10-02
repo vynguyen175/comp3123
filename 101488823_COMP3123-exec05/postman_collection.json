@@ -1,0 +1,120 @@
+{
+  "info": {
+    "name": "COMP3123 Exercise 05 - Express.js Routes",
+    "description": "Collection for testing Express.js routes with MongoDB Atlas integration",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Home Route",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/home",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["home"]
+        }
+      }
+    },
+    {
+      "name": "User Profile",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/v1/user/profile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "user", "profile"]
+        }
+      }
+    },
+    {
+      "name": "User Login - Valid",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"bret\",\n  \"password\": \"bret@123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/user/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "user", "login"]
+        }
+      }
+    },
+    {
+      "name": "User Login - Invalid Username",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"invaliduser\",\n  \"password\": \"bret@123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/user/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "user", "login"]
+        }
+      }
+    },
+    {
+      "name": "User Login - Invalid Password",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"bret\",\n  \"password\": \"wrongpassword\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/v1/user/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "user", "login"]
+        }
+      }
+    },
+    {
+      "name": "User Logout",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/v1/user/logout/bret",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8081",
+          "path": ["api", "v1", "user", "logout", "bret"]
+        }
+      }
+    }
+  ]
+}
